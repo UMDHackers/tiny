@@ -1,0 +1,6 @@
+compressai==1.2.8
+torch==2.11.0
+torchvision==0.26.0
+zstandard==0.25.0
+Pillow==12.1.1
+numpy==1.26.4

@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+
+# macOS
+.DS_Store
+
+# Test outputs
+*_recovered/
+*.tiny
+*_decompressed*/
+v8_*/
+video_comparison*/
+edits/
+notes.txt
+
+# Sample files (not shipped in repo)
+samples/
+samples_audio/
+samples_images/
+samples_videos/
+
+# IDE
+.vscode/
+.idea/
+
+# Claude
+.claude/

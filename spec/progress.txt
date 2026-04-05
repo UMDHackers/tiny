@@ -1,0 +1,25 @@
+[x] Initialize Python environment and install compressai, torch, zstandard, Pillow.
+
+[x] Create core/quantizer.py implementing 4-bit TurboQuant logic.
+
+[x] Create core/encoder.py that maps images to quantized latents.
+    - encode(path, quality) → EncodedImage dataclass (name, dims, quantized int8, scale)
+    - encode_batch(paths, quality) → list[EncodedImage]
+    - decode(encoded) → float32 tensor (1, 3, H, W)
+
+[x] Create core/header.py to handle binary packing/unpacking.
+    - Uses struct library (little-endian), MAGIC=b'TINY', VERSION=1
+    - Per-image: name, orig dims, lat_shape (4I), scale (f), zstd data
+    - Prints PSNR after every unpack; >30="Great.", <20="TurboQuantizing is too aggressive."
+    - Added MAX_DIM=1024 resize (pad to 64x multiples) to handle high-res inputs
+
+[x] Build the main.py CLI interface.
+    - tiny pack <folder> [--quality 1-8] [--out FILE]
+    - tiny unpack <file> [--quality 1-8] [--originals FOLDER]
+
+Results on samples/ (quality=1):
+  church.jpg:   24.53 dB — Acceptable.
+  hill.jpg:     26.22 dB — Acceptable.
+  landscape.jpg: 22.69 dB — Acceptable.
+  mountain.jpg:  24.97 dB — Acceptable.
+  Total: 7.7 MB → 10,627 bytes (99.9% compression)

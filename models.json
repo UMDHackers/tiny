@@ -1,0 +1,36 @@
+{
+  "img_mbt2018_q1": {
+    "type": "compressai",
+    "model_name": "mbt2018_mean",
+    "quality": 1,
+    "description": "MBT2018 Mean VAE, quality 1 (default image expert)",
+    "local_path": "models/img_mbt2018_q1.pth"
+  },
+  "img_mbt2018_q3": {
+    "type": "compressai",
+    "model_name": "mbt2018_mean",
+    "quality": 3,
+    "description": "MBT2018 Mean VAE, quality 3 (balanced)",
+    "local_path": "models/img_mbt2018_q3.pth"
+  },
+  "img_mbt2018_q5": {
+    "type": "compressai",
+    "model_name": "mbt2018_mean",
+    "quality": 5,
+    "description": "MBT2018 Mean VAE, quality 5 (high quality)",
+    "local_path": "models/img_mbt2018_q5.pth"
+  },
+  "img_mbt2018_q8": {
+    "type": "compressai",
+    "model_name": "mbt2018_mean",
+    "quality": 8,
+    "description": "MBT2018 Mean VAE, quality 8 (near-lossless)",
+    "local_path": "models/img_mbt2018_q8.pth"
+  },
+  "aud_encodec_24k": {
+    "type": "encodec",
+    "sample_rate": 24000,
+    "description": "Meta EnCodec 24kHz (default audio expert)",
+    "local_path": "models/encodec_24khz.pth"
+  }
+}
